@@ -37,6 +37,9 @@ const App = {
     },
     watch: {
         inputValue(value) {
+           if( value.length==10){   
+            this.inputValue =''
+            }
              console.log('input  Value Change',value);
         }
     }
