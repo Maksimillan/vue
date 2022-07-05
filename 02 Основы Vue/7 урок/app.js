@@ -32,7 +32,12 @@ const App = {
     },
     computed: {
         doubleCountComputed() {
-            return this.notes.length * 2  
+            return this.notes.length * 2
+        }
+    },
+    watch: {
+        inputValue(value) {
+             console.log('input  Value Change',value);
         }
     }
 }
