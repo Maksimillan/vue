@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vue Basics</title>
+  <link rel="stylesheet" href="theme.css" />
+</head>
+
+<body>
+
+  <div class="container" id="app">
+
+    <div class="card ">
+      <h1>{{title}}</h1>
+
+      <div class="from-control">
+        <input :value="inputValue" :placeholder="placeholderString" @input="inputChangeHandler"
+          @keypress.enter="addNote" type="text" name="" id="">
+
+        <button @click="addNote" class="btn">Добавить</button>
+      </div>
+      <hr />
+      <ul class="list" v-if="notes.length !==0 ">
+        <li class="list-item" v-for="(note ,i) in notes">
+          {{i+1}} {{toUpperCase(note)}}
+          <button class="btn danger" @click="deleateNote(i,$event)">удалит</button>
+        </li>
+        <li>
+          <strong>
+            Общее количество: {{notes.length}} |  удвоенно на два :  {{ doubleCountComputed}} 
+          </strong>
+        </li>
+      </ul>
+      <div v-if="notes.lenght ===0 ">
+        Add note
+      </div>
+    </div>
+
+  </div>
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="./app.js"></script>
+</body>
+
+</html>
