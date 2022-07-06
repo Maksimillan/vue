@@ -8,9 +8,6 @@ const App = {
         }
     },
     methods: {
-        inputChangeHandler(event) {
-            this.inputValue = event.target.value
-        },
         addNote() {
             if (this.inputValue !== '') {
                 this.notes.push(this.inputValue)
@@ -37,10 +34,10 @@ const App = {
     },
     watch: {
         inputValue(value) {
-           if( value.length==10){   
-            this.inputValue =''
+            if (value.length == 10) {
+                this.inputValue = ''
             }
-             console.log('input  Value Change',value);
+            console.log('input  Value Change', value);
         }
     }
 }

@@ -13,10 +13,14 @@
   <div class="container" id="app">
 
     <div class="card ">
-      <h1>{{title}}</h1>
+      <h1 :style="{
+        color :inputValue.length<5 ? 'darkred' : 'darkblue',
+        fontSize: inputValue.length<5 ? '2rem' : '1rem'
+      
+      }">{{title}}</h1>
 
       <div class="from-control">
-        <input :value="inputValue" :placeholder="placeholderString" @input="inputChangeHandler"
+        <input  :placeholder="placeholderString" v-model="inputValue"
           @keypress.enter="addNote" type="text" name="" id="">
 
         <button @click="addNote" class="btn">Добавить</button>
